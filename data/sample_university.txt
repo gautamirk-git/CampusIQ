@@ -1,0 +1,141 @@
+RIVERBEND UNIVERSITY — GENERAL INFORMATION GUIDE (SAMPLE DOCUMENT)
+
+This is a sample information document for a fictional school, "Riverbend University,"
+used to test the RAG assistant. Replace this file with your real university's document
+(PDF or text) once you're ready — see backend/ingest.py.
+
+=== ABOUT RIVERBEND UNIVERSITY ===
+
+Riverbend University is a mid-sized private university founded in 1962, located in
+Millfield, Oregon. It enrolls approximately 8,200 undergraduate students and 1,500
+graduate students. The university is organized into five colleges: the College of
+Arts & Sciences, the College of Engineering, the School of Business, the School of
+Education, and the School of Nursing.
+
+The academic year is divided into two 15-week semesters (Fall and Spring) plus an
+optional 8-week Summer session. Riverbend's mascot is the River Otter, and its
+athletic teams compete in NCAA Division II as the "Riverbend Otters."
+
+=== ADMISSIONS ===
+
+Riverbend uses a holistic admissions process. Applicants submit the Common Application
+or Riverbend's own application portal, along with:
+- Official high school transcript
+- One letter of recommendation
+- A 500-word personal essay
+- Optional: SAT or ACT scores (test-optional policy in effect since 2021)
+
+Application deadlines:
+- Early Action: November 1 (non-binding, decisions released by December 15)
+- Regular Decision: January 15 (decisions released by March 15)
+- Transfer students: rolling admission, priority deadline April 1 for Fall entry
+
+The regular decision acceptance rate for the most recent entering class was 68%.
+The middle 50% unweighted high school GPA for admitted students was 3.4–3.9.
+
+International students must also submit TOEFL (minimum score 80) or IELTS (minimum
+score 6.5) unless they attended a secondary school where English was the language
+of instruction for at least three years.
+
+=== COST OF ATTENDANCE (CURRENT ACADEMIC YEAR) ===
+
+Estimated annual costs for a full-time undergraduate student living on campus:
+
+- Tuition: $42,500
+- Mandatory fees: $1,850
+- Room and board (standard double, 14-meal plan): $13,200
+- Books and supplies (estimated): $1,200
+- Personal expenses (estimated): $2,000
+
+Total estimated cost of attendance: approximately $60,750 per year.
+
+Riverbend guarantees to meet 100% of demonstrated financial need for admitted
+first-year students, as determined by the FAFSA and CSS Profile. About 72% of
+undergraduates receive some form of need-based or merit-based aid. The average
+need-based grant (excluding loans) for the most recent first-year class was
+$28,300.
+
+Merit scholarships (no separate application required; awarded automatically at
+admission based on the application):
+- Trustee Scholarship: $24,000/year, requires 3.8+ GPA and top 10% class rank
+- Dean's Scholarship: $16,000/year, requires 3.5+ GPA
+- Founder's Scholarship: $9,000/year, requires 3.2+ GPA
+
+Payment plans are available through the Student Accounts Office, allowing tuition
+to be split into 4 or 10 monthly installments per semester.
+
+=== COURSES AND ACADEMIC PROGRAMS ===
+
+Riverbend offers 58 undergraduate majors and 22 graduate programs. Popular
+undergraduate majors include:
+
+College of Engineering:
+- B.S. Computer Science (also offers a Data Science concentration)
+- B.S. Mechanical Engineering
+- B.S. Civil Engineering
+- B.S. Electrical & Computer Engineering
+
+College of Arts & Sciences:
+- B.A. Psychology
+- B.A. English
+- B.S. Biology (Pre-Med track available)
+- B.A. Economics
+- B.A. Environmental Studies
+
+School of Business:
+- B.S. Business Administration (concentrations in Finance, Marketing, and
+  Entrepreneurship)
+- B.S. Accounting
+
+School of Nursing:
+- B.S. Nursing (BSN) — accepts a limited cohort of 90 students per year; requires
+  a separate secondary application after admission to the university, submitted
+  by February 1 of the applicant's first year.
+
+Graduate programs of note:
+- M.S. Computer Science (thesis and non-thesis tracks)
+- M.B.A. (full-time 2-year and part-time evening formats)
+- M.S. Data Analytics
+- Master of Education (M.Ed.)
+
+Standard undergraduate degrees require 120 credit hours; the B.S. Nursing requires
+128 credit hours due to clinical requirements. Most courses are 3 or 4 credit
+hours. Class sizes for introductory courses average 35 students; upper-division
+seminars average 15 students. The student-to-faculty ratio university-wide is 13:1.
+
+Core Curriculum: all undergraduates, regardless of major, must complete Riverbend's
+"Foundations" core curriculum, which includes:
+- 2 courses in Written Communication
+- 2 courses in Quantitative Reasoning
+- 1 course in Global Perspectives
+- 1 course in Ethics & Values
+- 2 courses in Natural Sciences (at least one with a lab)
+- 1 capstone course in the student's major, taken senior year
+
+=== ACADEMIC CALENDAR HIGHLIGHTS ===
+
+- Fall semester move-in: last Saturday of August
+- Fall semester classes begin: first Tuesday after Labor Day
+- Fall semester final exams: mid-December (exact dates vary by year)
+- Winter break: mid-December through mid-January
+- Spring semester classes begin: mid-January
+- Spring semester final exams: early May
+- Commencement: second Saturday in May
+
+=== STUDENT LIFE ===
+
+Riverbend has over 120 registered student organizations, including a student
+newspaper (The Riverbend Current), a debate team, and a chapter of Model United
+Nations. About 18% of students participate in one of Riverbend's 12 fraternities
+and sororities. On-campus housing is guaranteed for first- and second-year
+students; approximately 55% of all undergraduates live on campus.
+
+=== CONTACT INFORMATION ===
+
+Office of Admissions: admissions@riverbend.example.edu, (555) 013-2000
+Office of Financial Aid: finaid@riverbend.example.edu, (555) 013-2050
+General Information: info@riverbend.example.edu, (555) 013-2000
+
+Note: This document intentionally does NOT contain information about parking
+permits, graduate housing, or study-abroad partner schools. The assistant should
+say it does not know if asked about topics outside this document.
