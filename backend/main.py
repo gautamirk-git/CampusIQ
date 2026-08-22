@@ -1,17 +1,30 @@
 """FastAPI backend exposing the RAG pipeline as a simple chat API."""
 
+import os
+
 from dotenv import load_dotenv
 
 load_dotenv()  # must run before rag.py constructs the Anthropic client
 
 import anthropic
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
 
-from rag import answer_question
+from rag import answer_question, get_collection, ingest_all_curated
+
+# Caps requests per client IP to the paid /ask endpoint so a public demo link
+# can't run up API costs. Override via env, e.g. "5/minute" or "50/day".
+RATE_LIMIT = os.environ.get("RATE_LIMIT", "10/hour")
 
 app = FastAPI(title="CampusIQ")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,13 +49,23 @@ class AskResponse(BaseModel):
     sources: list[Source]
 
 
+@app.on_event("startup")
+def seed_index_if_empty():
+    # Hosts without persistent disk (e.g. a free-tier deploy) start with an
+    # empty Chroma store on every boot — rebuild it from the curated GT
+    # source files rather than requiring a manual ingest step on the server.
+    if get_collection().count() == 0:
+        ingest_all_curated()
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
 
 @app.post("/ask", response_model=AskResponse)
-def ask(req: AskRequest):
+@limiter.limit(RATE_LIMIT)
+def ask(req: AskRequest, request: Request):
     question = req.question.strip()
     if not question:
         raise HTTPException(status_code=400, detail="question must not be empty")

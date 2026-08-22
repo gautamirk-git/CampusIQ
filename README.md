@@ -93,9 +93,6 @@ The assistant should say it doesn't know for the second set, not guess.
 
 ## Next steps (Georgia Tech POC)
 
-- Curate ~10-15 real, official Georgia Tech pages (majors, admissions,
-  deadlines, tuition, housing, scholarships) and ingest them in place of the
-  sample document.
 - Add a `url` field to chunk metadata so citations link to real official GT
   pages instead of internal filenames.
 - Add a topic-keyword → official GT URL fallback map so "I don't know"
@@ -104,7 +101,6 @@ The assistant should say it doesn't know for the second set, not guess.
   questions like "tell me more about Computer Science" work.
 - Update the system prompt to return the structured Program/College/Overview
   /Source answer format.
-- Add Georgia Tech branding (logo, colors, campus image) to the Streamlit UI.
 - Currently defaults to `claude-haiku-4-5` for cheap dev/testing (~$0.002 per
   question). Switch `CLAUDE_MODEL` in `backend/rag.py` to `claude-opus-5` for
   production-quality answers if needed.
@@ -115,3 +111,15 @@ The assistant should say it doesn't know for the second set, not guess.
   Community Cloud. Chroma's local persistence works for a single-instance
   deployment; move to a hosted vector DB only if multiple backend replicas
   are ever needed.
+
+## Deployment safeguards (public demo)
+
+Before sharing a public link, use a dedicated Anthropic API key with a
+spend cap set in the Anthropic Console (see chat history / project notes),
+not your personal key. Two additional guardrails are built in, both off by
+default for local dev:
+
+- `RATE_LIMIT` (backend, `.env`) — caps requests per IP on `/ask`, e.g.
+  `10/hour`. Defaults to `10/hour` if unset.
+- `CAMPUSIQ_ACCESS_CODE` (frontend env var) — if set, visitors must enter
+  this code before the chat unlocks. Unset means no gate (open access).

@@ -1,0 +1,163 @@
+Source: https://finaid.gatech.edu/costs/undergraduate-costs
+
+# Georgia Tech Undergraduate Cost of Attendance
+
+## 2026-2027 Cost of Attendance
+
+### First-Year Georgia Resident Cost
+
+| Item | On Campus | Off Campus | With Parent |
+|------|-----------|-----------|------------|
+| Tuition | $10,618 | $10,618 | $10,618 |
+| Mandatory Student Fees | $1,516 | $1,516 | $1,516 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Housing Allowance | $8,318 | $12,084 | $788 |
+| Standard Food Service Plan | $6,310 | $6,310 | $3,470 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $566 | $566 | $3,458 |
+| Total per Year (2 semesters) | $30,928 | $34,694 | $23,450 |
+
+### First-Year Out of State Cost
+
+| Item | On Campus | Off Campus | With Parent |
+|------|-----------|-----------|------------|
+| Tuition | $34,604 | $34,604 | $34,604 |
+| Mandatory Student Fees | $1,516 | $1,516 | $1,516 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Housing Allowance | $8,318 | $12,084 | $788 |
+| Standard Food Service Plan | $6,310 | $6,310 | $3,470 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $966 | $966 | $3,458 |
+| Total per Year (2 semesters) | $55,314 | $59,080 | $47,436 |
+
+### First-Year Out of Country Cost
+
+| Item | On Campus | Off Campus |
+|------|-----------|-----------|
+| Tuition | $35,610 | $35,610 |
+| Mandatory Student Fees | $1,716 | $1,716 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 |
+| Housing Allowance | $8,318 | $12,084 |
+| Standard Food Service Plan | $6,310 | $6,310 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 |
+| Transportation Allowance | $966 | $966 |
+| Total per Year (2 semesters) | $56,520 | $60,286 |
+
+### Current and Transfer Georgia Resident Cost
+
+| Item | On Campus | Off Campus | With Parent |
+|------|-----------|-----------|------------|
+| Tuition | $10,618 | $10,618 | $10,618 |
+| Mandatory Student Fees | $1,516 | $1,516 | $1,516 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Housing Allowance | $10,922 | $12,084 | $788 |
+| Standard Food Service Plan | $6,310 | $6,310 | $3,470 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $566 | $566 | $3,458 |
+| Total per Year (2 semesters) | $33,532 | $34,694 | $23,450 |
+
+### Current and Transfer Out of State Cost
+
+| Item | On Campus | Off Campus | With Parent |
+|------|-----------|-----------|------------|
+| Tuition | $34,604 | $34,604 | $34,604 |
+| Mandatory Student Fees | $1,516 | $1,516 | $1,516 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Housing Allowance | $10,922 | $12,084 | $788 |
+| Standard Food Service Plan | $6,310 | $6,310 | $3,470 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $966 | $966 | $3,458 |
+| Total per Year (2 semesters) | $57,918 | $59,080 | $47,436 |
+
+### Current and Transfer Out of Country Cost
+
+| Item | On Campus | Off Campus |
+|------|-----------|-----------|
+| Tuition | $35,610 | $35,610 |
+| Mandatory Student Fees | $1,716 | $1,716 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 |
+| Housing Allowance | $10,922 | $12,084 |
+| Standard Food Service Plan | $6,310 | $6,310 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 |
+| Transportation Allowance | $966 | $966 |
+| Total per Year (2 semesters) | $59,124 | $60,286 |
+
+## Current Year Cost (2025-26)
+
+### First-Year Students Living On-Campus
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| First-year Housing Allowance | $7,864 | $7,864 | $7,864 |
+| Food Service Plan | $6,132 | $6,132 | $6,132 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $550 | $950 | $950 |
+| Total per Year (2 semesters) | $30,154 | $53,638 | $54,814 |
+
+### First-Year Students Living Off-Campus
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Housing Allowance | $11,744 | $11,744 | $11,744 |
+| Food Service Plan | $6,132 | $6,132 | $6,132 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $550 | $950 | $950 |
+| Total per Year (2 semesters) | $34,034 | $57,518 | $58,694 |
+
+### First-Year Students Living With Parent/Guardian
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Food Service Plan | $3,372 | $3,372 | $3,372 |
+| Housing Allowance | $766 | $766 | $766 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $3,360 | $3,360 | $3,360 |
+| Total per Year (2 semesters) | $23,106 | $46,190 | $47,366 |
+
+### Current and Transfer Students Living On-Campus
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Food Service Plan | $6,132 | $6,132 | $6,132 |
+| Housing Allowance | $10,528 | $10,528 | $10,528 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $550 | $950 | $950 |
+| Total per Year (2 semesters) | $32,818 | $56,302 | $57,478 |
+
+### Current and Transfer Students Living Off-Campus
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Food Service Plan | $6,132 | $6,132 | $6,132 |
+| Housing Allowance | $11,744 | $11,744 | $11,744 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $550 | $950 | $950 |
+| Total per Year (2 semesters) | $34,034 | $57,518 | $58,694 |
+
+### Current and Transfer Students Living with Parent/Guardian
+
+| Item | Georgia Residents | Out of State | Out of Country |
+|------|------------------|-------------|----------------|
+| Tuition | $10,512 | $33,596 | $34,572 |
+| Mandatory Student Fees | $1,496 | $1,496 | $1,696 |
+| Books, Course Materials, Supplies, and Equipment | $800 | $800 | $800 |
+| Food Service Plan | $3,372 | $3,372 | $3,372 |
+| Housing Allowance | $766 | $766 | $766 |
+| Personal and/or Other Miscellaneous Expenses | $2,800 | $2,800 | $2,800 |
+| Transportation Allowance | $3,360 | $3,360 | $3,360 |
+| Total per Year (2 semesters) | $23,106 | $46,190 | $47,366 |

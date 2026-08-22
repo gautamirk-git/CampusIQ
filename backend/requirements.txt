@@ -6,3 +6,4 @@ chromadb>=0.5.20
 sentence-transformers>=3.3
 pypdf>=5.1
 anthropic>=0.40
+slowapi>=0.1.9

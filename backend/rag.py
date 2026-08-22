@@ -127,6 +127,41 @@ def ingest_document(path: str, source_name: str | None = None) -> int:
     return len(chunks)
 
 
+# Filename -> friendly source name, for the curated Georgia Tech pages in
+# data/. Used to (re)seed the vector store on a fresh deploy where local
+# Chroma persistence doesn't carry over (e.g. a free-tier host with no
+# persistent disk), without depending on someone having run ingest.py by hand
+# on the server.
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+CURATED_SOURCES = {
+    "gt_about_overview.txt": "Georgia Tech About / Overview",
+    "gt_admissions_requirements.txt": "Georgia Tech First-Year Admission Requirements",
+    "gt_application_deadlines.txt": "Georgia Tech Application Deadlines",
+    "gt_tuition_cost_of_attendance.txt": "Georgia Tech Tuition and Cost of Attendance",
+    "gt_scholarships_financial_aid.txt": "Georgia Tech Scholarships and Financial Aid",
+    "gt_housing_first_year.txt": "Georgia Tech First-Year Housing",
+    "gt_major_computer_science.txt": "Georgia Tech B.S. Computer Science",
+    "gt_major_mechanical_engineering.txt": "Georgia Tech B.S. Mechanical Engineering",
+    "gt_major_electrical_computer_engineering.txt": "Georgia Tech B.S. Electrical/Computer Engineering",
+    "gt_major_industrial_systems_engineering.txt": "Georgia Tech B.S. Industrial and Systems Engineering",
+    "gt_major_aerospace_engineering.txt": "Georgia Tech B.S. Aerospace Engineering",
+    "gt_major_biomedical_engineering.txt": "Georgia Tech B.S. Biomedical Engineering",
+    "gt_major_business_administration.txt": "Georgia Tech B.S. Business Administration (Scheller)",
+}
+
+
+def ingest_all_curated() -> int:
+    """(Re)ingest every curated Georgia Tech source file in data/. Returns the
+    total number of chunks stored. Safe to call repeatedly — ingest_document
+    replaces a source's prior chunks rather than duplicating them."""
+    total = 0
+    for filename, source_name in CURATED_SOURCES.items():
+        path = DATA_DIR / filename
+        if path.exists():
+            total += ingest_document(str(path), source_name=source_name)
+    return total
+
+
 def retrieve(query: str, k: int = TOP_K) -> list[dict]:
     collection = get_collection()
     if collection.count() == 0:
