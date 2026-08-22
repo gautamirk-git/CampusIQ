@@ -11,7 +11,6 @@ from anthropic import Anthropic
 
 CHROMA_DIR = str(Path(__file__).resolve().parent.parent / "chroma_db")
 COLLECTION_NAME = "university_docs"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 # claude-haiku-4-5 for cheap dev/testing (~1/5th the cost of Opus 5 per
 # token). Swap to "claude-opus-5" for production-quality answers.
@@ -45,9 +44,12 @@ names) exactly as they appear in the context.
 
 
 def _embedding_function():
-    return embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name=EMBEDDING_MODEL
-    )
+    # Chroma's built-in default: the same all-MiniLM-L6-v2 model, run via
+    # onnxruntime instead of full sentence-transformers/PyTorch. Same
+    # embedding quality, a fraction of the memory — sentence-transformers
+    # pulls in PyTorch and was blowing past the 512MB RAM cap on free-tier
+    # hosts (e.g. Render's free plan) before a single request was served.
+    return embedding_functions.DefaultEmbeddingFunction()
 
 
 def get_collection():
