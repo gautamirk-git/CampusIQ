@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .env
 chroma_db/
+question_cache.json
 *.egg-info/

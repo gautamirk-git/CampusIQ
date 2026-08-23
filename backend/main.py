@@ -20,6 +20,13 @@ from rag import answer_question, get_collection, ingest_all_curated
 # can't run up API costs. Override via env, e.g. "5/minute" or "50/day".
 RATE_LIMIT = os.environ.get("RATE_LIMIT", "10/hour")
 
+# Only this origin may call the API from a browser. Defaults to the deployed
+# Streamlit app; override via env if the frontend URL changes (e.g. a custom
+# domain), or set to "http://localhost:8501" for local-only testing.
+FRONTEND_URL = os.environ.get(
+    "FRONTEND_URL", "https://gautamirk-git-campusiq-frontendapp-ax4jfn.streamlit.app"
+)
+
 app = FastAPI(title="CampusIQ")
 
 limiter = Limiter(key_func=get_remote_address)
@@ -28,7 +35,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # local dev only — tighten before deploying publicly
+    allow_origins=[FRONTEND_URL],
     allow_methods=["*"],
     allow_headers=["*"],
 )

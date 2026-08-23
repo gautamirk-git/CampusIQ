@@ -1,5 +1,6 @@
 """Core RAG pipeline: chunking, embedding, retrieval, and grounded generation."""
 
+import json
 import os
 import re
 from pathlib import Path
@@ -27,6 +28,14 @@ CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
 TOP_K = 3
 MAX_ANSWER_TOKENS = 400
+
+# File-based cache of question -> answer, so a repeated question skips the
+# paid Claude call entirely. Persists across restarts on a host with
+# persistent disk (e.g. your own machine); on a free-tier host with no
+# persistent disk (e.g. Render's free plan) it still helps — it just resets
+# whenever the instance cold-starts, same as the vector store does.
+CACHE_FILE = Path(__file__).resolve().parent.parent / "question_cache.json"
+CACHE_MAX_ENTRIES = 500
 
 SYSTEM_PROMPT = """You are a helpful assistant that answers questions about a \
 university using ONLY the excerpts provided below as context. These excerpts \
@@ -181,8 +190,45 @@ def _anthropic_client() -> Anthropic:
     return Anthropic()  # picks up ANTHROPIC_API_KEY from the environment
 
 
+def _normalize_question(question: str) -> str:
+    """Lowercase, strip punctuation, and collapse whitespace so equivalent
+    phrasings like "What is tuition?" and "what is tuition" share a cache
+    entry."""
+    normalized = question.lower().strip()
+    normalized = re.sub(r"[^\w\s]", "", normalized)
+    return re.sub(r"\s+", " ", normalized).strip()
+
+
+def _load_cache() -> dict:
+    if not CACHE_FILE.exists():
+        return {}
+    try:
+        return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def _cache_get(question: str) -> dict | None:
+    return _load_cache().get(_normalize_question(question))
+
+
+def _cache_put(question: str, result: dict) -> None:
+    cache = _load_cache()
+    cache[_normalize_question(question)] = result
+    # Dicts preserve insertion order, so the first key is the oldest entry.
+    while len(cache) > CACHE_MAX_ENTRIES:
+        del cache[next(iter(cache))]
+    CACHE_FILE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+
+
 def answer_question(question: str, k: int = TOP_K) -> dict:
-    """Retrieve relevant chunks and generate a grounded answer via Claude."""
+    """Retrieve relevant chunks and generate a grounded answer via Claude.
+    Answers are cached on disk by normalized question text, so a repeat
+    question returns instantly with no Claude API call."""
+    cached = _cache_get(question)
+    if cached is not None:
+        return cached
+
     hits = retrieve(question, k=k)
 
     if not hits:
@@ -217,10 +263,12 @@ def answer_question(question: str, k: int = TOP_K) -> dict:
         block.text for block in response.content if block.type == "text"
     )
 
-    return {
+    result = {
         "answer": answer_text,
         "sources": [
             {"source": h["source"], "excerpt": h["text"][:200], "distance": h["distance"]}
             for h in hits
         ],
     }
+    _cache_put(question, result)
+    return result
