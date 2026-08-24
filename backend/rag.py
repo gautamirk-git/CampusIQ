@@ -26,7 +26,7 @@ _THINKING_TOGGLEABLE_PREFIXES = ("claude-opus-5", "claude-sonnet-5")
 
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
-TOP_K = 3
+TOP_K = 5
 MAX_ANSWER_TOKENS = 400
 
 # File-based cache of question -> answer, so a repeated question skips the
