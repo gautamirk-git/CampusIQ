@@ -85,6 +85,9 @@ def _inject_styles() -> None:
             padding: 0.5rem 0.75rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }}
+        [data-testid="stChatMessage"] * {{
+            color: #1a1a1a !important;
+        }}
 
         [data-testid="stChatInput"] {{
             border-radius: 0.75rem;
