@@ -173,15 +173,25 @@ if question:
         st.markdown(question)
 
     with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
+        with st.spinner("Thinking... (first response after a few idle minutes can take up to a minute or two while the server wakes up)"):
             try:
+                # 120s, not 60s: a free-tier backend that's spun down from
+                # inactivity needs time to cold-start (reload the embedding
+                # model, rebuild the vector index) before it can even start
+                # answering.
                 resp = requests.post(
-                    f"{BACKEND_URL}/ask", json={"question": question}, timeout=60
+                    f"{BACKEND_URL}/ask", json={"question": question}, timeout=120
                 )
                 resp.raise_for_status()
                 data = resp.json()
                 answer = data["answer"]
                 sources = data.get("sources", [])
+            except requests.exceptions.Timeout:
+                answer = (
+                    "⚠️ The assistant is taking longer than usual to wake up "
+                    "from being idle. Please try asking again in a moment."
+                )
+                sources = []
             except requests.exceptions.ConnectionError:
                 answer = (
                     f"⚠️ Couldn't reach the backend at {BACKEND_URL} — is it running?"
